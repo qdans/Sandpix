@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SandPix - Image to Pixel Art</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="assets/images/logo.png" alt="SandPix Logo">
+        <div class="logo-container">
+            <img src="logo.png" alt="SandPix Logo" class="logo">
             <h1>SandPix</h1>
         </div>
         <a href="https://github.com/qdans/SandPix" class="github-button">GITHUB</a>
     </header>
     <main>
-        <h2 class="fade-in">Image to pixel</h2>
-        <p class="fade-in">Convert your image to pixel art</p>
-        <div class="customization slide-in">
+        <section class="intro">
+            <h2>Image to Pixel</h2>
+            <p>Convert your image to pixel art</p>
+        </section>
+        <section class="customization">
             <h3>Customization</h3>
             <div class="options">
                 <label>Style Mode:</label>
@@ -38,17 +40,21 @@
                 <input type="radio" name="edge-density" value="medium"> Medium
                 <input type="radio" name="edge-density" value="large" checked> Large
             </div>
-        </div>
-        <div class="upload-area bounce" id="drop-area">
-            <p>📤 Drop your image here</p>
-            <input type="file" id="file-input" accept="image/*" hidden>
-        </div>
-        <canvas id="canvas" style="display: none;"></canvas>
-        <button class="convert-button pulse" id="convert-button">Convert</button>
-        <button class="download-button pulse" id="download-button">⬇ DOWNLOAD <span>PNG</span></button>
+        </section>
+        <section class="upload-section">
+            <div class="upload-area" id="drop-area">
+                <p>📤 Drop your image here</p>
+                <input type="file" id="file-input" accept="image/*" hidden>
+            </div>
+            <canvas id="canvas" style="display: none;"></canvas>
+            <div class="buttons">
+                <button class="convert-button" id="convert-button">Convert</button>
+                <button class="download-button" id="download-button">⬇ DOWNLOAD <span>PNG</span></button>
+            </div>
+        </section>
     </main>
     <footer>
-        <h3 class="fade-in">FAQ</h3>
+        <h3>FAQ</h3>
         <p>What is "SandPix"?</p>
         <p>What is "SandPix"?</p>
         <p>What is "SandPix"?</p>
