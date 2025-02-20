@@ -1,119 +1,79 @@
-/* Reset dasar */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-
-/* Background */
 body {
-    background: url('/assets/images/background.png') no-repeat center center fixed;
+    font-family: Arial, sans-serif;
+    background: url('../assets/images/background.png') no-repeat center center fixed;
     background-size: cover;
     color: white;
     text-align: center;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
 }
 
-/* Header */
 header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 20px;
 }
 
-/* Logo */
 .logo {
     display: flex;
     align-items: center;
-    font-size: 24px;
-    font-weight: bold;
 }
 
 .logo img {
-    width: 40px;
-    height: 40px;
+    height: 50px;
     margin-right: 10px;
 }
 
-/* GitHub Button */
-.github-button {
+.github-btn {
     background: white;
     color: black;
     padding: 10px 20px;
-    border-radius: 20px;
-    font-weight: bold;
     text-decoration: none;
+    border-radius: 20px;
 }
 
-.github-button:hover {
-    background: #ddd;
-}
-
-/* Customization */
 .customization {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
     border-radius: 10px;
     display: inline-block;
-    text-align: left;
 }
 
-/* Upload Box */
-.upload-box {
+.options {
+    margin: 10px 0;
+}
+
+.upload-area {
+    margin: 20px auto;
+    padding: 20px;
     border: 2px dashed white;
-    padding: 50px;
-    margin-top: 20px;
     display: inline-block;
+}
+
+.drop-zone img {
+    width: 30px;
+}
+
+canvas {
+    display: block;
+    margin: 20px auto;
     border-radius: 10px;
+}
+
+button {
+    background: #d38b65;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    margin: auto;
     cursor: pointer;
 }
 
-.upload-box:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-/* Download Button */
-.download-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #d38d65;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    margin: 20px auto;
-}
-
-.download-btn img {
+button img {
     width: 20px;
-    margin-right: 10px;
-}
-
-/* FAQ */
-.faq {
-    margin-top: 40px;
-    text-align: left;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.faq h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-/* Responsif */
-@media (max-width: 768px) {
-    .upload-box {
-        width: 100%;
-    }
-
-    .customization {
-        width: 100%;
-    }
+    margin-right: 5px;
 }
