@@ -10,17 +10,20 @@
 <body>
     <header>
         <div class="logo-container">
-            <img src="logo.png" alt="SandPix Logo" class="logo">
+            <img src="assets/images/logo.png" alt="SandPix Logo" class="logo">
             <h1>SandPix</h1>
         </div>
         <a href="https://github.com/qdans/SandPix" class="github-button">GITHUB</a>
     </header>
     <main>
-        <section class="intro">
-            <h2>Image to Pixel</h2>
-            <p>Convert your image to pixel art</p>
-        </section>
-        <section class="customization">
+        <div class="hero-section">
+            <img src="assets/images/hero.png" alt="Hero Image" class="hero-image">
+            <div class="text-content">
+                <h2>Image to Pixel</h2>
+                <p>Convert your image to pixel art</p>
+            </div>
+        </div>
+        <div class="customization">
             <h3>Customization</h3>
             <div class="options">
                 <label>Style Mode:</label>
@@ -40,24 +43,20 @@
                 <input type="radio" name="edge-density" value="medium"> Medium
                 <input type="radio" name="edge-density" value="large" checked> Large
             </div>
-        </section>
-        <section class="upload-section">
-            <div class="upload-area" id="drop-area">
-                <p>📤 Drop your image here</p>
-                <input type="file" id="file-input" accept="image/*" hidden>
-            </div>
-            <canvas id="canvas" style="display: none;"></canvas>
-            <div class="buttons">
-                <button class="convert-button" id="convert-button">Convert</button>
-                <button class="download-button" id="download-button">⬇ DOWNLOAD <span>PNG</span></button>
-            </div>
-        </section>
+        </div>
+        <div class="upload-area" id="drop-area">
+            <p>📤 Drop your image here</p>
+            <input type="file" id="file-input" accept="image/*" hidden>
+        </div>
+        <canvas id="canvas" style="display: none;"></canvas>
+        <button class="convert-button" id="convert-button">Convert</button>
+        <button class="download-button" id="download-button">⬇ DOWNLOAD <span>PNG</span></button>
     </main>
     <footer>
         <h3>FAQ</h3>
         <p>What is "SandPix"?</p>
-        <p>What is "SandPix"?</p>
-        <p>What is "SandPix"?</p>
+        <p>How does it work?</p>
+        <p>Can I use this for free?</p>
     </footer>
 </body>
 </html>
