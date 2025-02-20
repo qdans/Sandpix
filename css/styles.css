@@ -1,145 +1,105 @@
-/* Reset dasar */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
 body {
+    font-family: Arial, sans-serif;
     background: url('assets/images/background.png') no-repeat center center fixed;
     background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
     color: white;
     text-align: center;
 }
 
-/* Header */
-.header {
+header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    width: 90%;
-    max-width: 1200px;
+    align-items: center;
     padding: 20px;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 24px;
-    font-weight: bold;
+    width: 150px;
 }
 
-.logo img {
-    width: 40px;
-    height: 40px;
+.github-btn {
+    width: 100px;
 }
 
-.github-button {
-    background: white;
-    color: black;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    cursor: pointer;
+h1 {
+    font-size: 2em;
 }
 
-/* Container utama */
-.main-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: 90%;
-    max-width: 1200px;
-    margin-top: 20px;
-}
-
-.title {
-    font-size: 32px;
-    font-weight: bold;
-}
-
-.subtitle {
-    font-size: 18px;
-    opacity: 0.8;
-}
-
-/* Customization Panel */
 .customization {
     background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
-    backdrop-filter: blur(5px);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    display: inline-block;
+    margin: 20px 0;
 }
 
-.customization label {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-}
-
-/* Drag & Drop Area */
-.upload-area {
-    width: 80%;
-    max-width: 600px;
-    height: 200px;
-    border: 2px dashed white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.upload-area:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-/* Download Button */
-.download-button {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: #E59572;
-    color: white;
-    padding: 15px 30px;
+fieldset {
     border: none;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.download-button:hover {
-    background: #D48365;
-}
-
-/* FAQ */
-.faq {
-    margin-top: 50px;
-    width: 80%;
-    max-width: 800px;
-    text-align: left;
-}
-
-.faq h2 {
-    font-size: 24px;
     margin-bottom: 10px;
 }
 
-.faq p {
-    font-size: 16px;
-    margin-bottom: 5px;
+legend {
+    font-weight: bold;
+}
+
+.upload-area {
+    border: 2px dashed white;
+    padding: 40px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.upload-area img {
+    width: 50px;
+}
+
+.upload-area p {
+    margin: 10px 0;
+}
+
+#fileInput {
+    display: none;
+}
+
+canvas {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+.download-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#downloadBtn {
+    background: #D18F60;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#downloadBtn img {
+    width: 20px;
+}
+
+#formatSelect {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+footer {
+    margin-top: 50px;
 }
