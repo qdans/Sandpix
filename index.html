@@ -3,66 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SandPix - Image to Pixel</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>SandPix - Convert Image to Pixel Art</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="assets/images/logo.png" alt="SandPix Logo" class="logo">
-            <h1>SandPix</h1>
-            <a href="https://github.com/qdans" class="github-button">GITHUB</a>
-        </header>
-        
-        <section class="main-content">
-            <h2>Image to pixel</h2>
-            <p>Convert your image to pixel art</p>
-            
-            <div class="customization">
-                <h3>Customization</h3>
-                <label>Style Mode:</label>
-                <input type="radio" name="style" value="enhance" checked> Enhance Edge
-                <input type="radio" name="style" value="isolate"> Isolate Pixel
-                <input type="radio" name="style" value="raw"> Raw Pixel
-                
-                <label>Pixel Size:</label>
-                <input type="radio" name="size" value="xs"> Extra Small
-                <input type="radio" name="size" value="s" checked> Small
-                <input type="radio" name="size" value="m"> Medium
-                <input type="radio" name="size" value="l"> Large
-                <input type="radio" name="size" value="xl"> Extra Large
-                
-                <label>Edge Density:</label>
-                <input type="radio" name="density" value="small"> Small
-                <input type="radio" name="density" value="medium" checked> Medium
-                <input type="radio" name="density" value="large"> Large
-            </div>
-            
-            <div class="upload-area">
-                <label for="file-upload" class="drop-area">
-                    <span>📤 Drop your image here</span>
-                </label>
-                <input type="file" id="file-upload" hidden>
+    <header>
+        <img src="assets/images/logo.png" alt="SandPix Logo" class="logo">
+        <a href="https://github.com/qdans" target="_blank">
+            <img src="assets/images/github-button.png" alt="GitHub" class="github-btn">
+        </a>
+    </header>
+
+    <main>
+        <h1>Image to pixel</h1>
+        <p>Convert your image to pixel art</p>
+
+        <section class="customization">
+            <h2>Customization</h2>
+            <div class="options">
+                <fieldset>
+                    <legend>Style Mode:</legend>
+                    <label><input type="radio" name="style" value="enhance" checked> Enhance Edge</label>
+                    <label><input type="radio" name="style" value="isolate"> Isolate Pixel</label>
+                    <label><input type="radio" name="style" value="raw"> Raw Pixel</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Pixel Size:</legend>
+                    <label><input type="radio" name="size" value="xs"> Extra Small</label>
+                    <label><input type="radio" name="size" value="small" checked> Small</label>
+                    <label><input type="radio" name="size" value="medium"> Medium</label>
+                    <label><input type="radio" name="size" value="large"> Large</label>
+                    <label><input type="radio" name="size" value="xl"> Extra Large</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Edge Density:</legend>
+                    <label><input type="radio" name="edge" value="small"> Small</label>
+                    <label><input type="radio" name="edge" value="medium" checked> Medium</label>
+                    <label><input type="radio" name="edge" value="large"> Large</label>
+                </fieldset>
             </div>
         </section>
-        
-        <section class="download-section">
-            <button id="download-btn">⬇ DOWNLOAD</button>
-            <select id="format-select">
+
+        <div class="upload-area" id="uploadArea">
+            <img src="assets/images/upload-icon.png" alt="Upload Icon">
+            <p>Drop your image here</p>
+            <input type="file" id="fileInput" accept="image/*">
+        </div>
+
+        <canvas id="canvas"></canvas>
+
+        <div class="download-section">
+            <button id="downloadBtn">
+                <img src="assets/images/download-icon.png" alt="Download Icon">
+                DOWNLOAD
+            </button>
+            <select id="formatSelect">
                 <option value="png">PNG</option>
                 <option value="jpg">JPG</option>
                 <option value="webp">WEBP</option>
             </select>
-        </section>
-        
-        <section class="faq">
-            <h3>FAQ</h3>
-            <p>What is "SandPix"?</p>
-            <p>What is "SandPix"?</p>
-            <p>What is "SandPix"?</p>
-        </section>
-    </div>
-    
-    <script src="assets/js/script.js"></script>
+        </div>
+    </main>
+
+    <footer>
+        <h2>FAQ</h2>
+        <p>What is "SandPix"?</p>
+        <p>What is "SandPix"?</p>
+        <p>What is "SandPix"?</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
