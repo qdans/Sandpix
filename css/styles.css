@@ -1,37 +1,57 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #3b1555, #c18d58);
+    background: linear-gradient(to bottom, #431c56, #d17b48);
     color: white;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
-.logo {
+
+header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    padding: 20px;
 }
-.github-button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: white;
-    color: black;
-    padding: 10px;
-    border-radius: 20px;
-    text-decoration: none;
+
+.logo img {
+    width: 50px;
+    height: auto;
 }
+
 .upload-area {
     border: 2px dashed white;
-    padding: 50px;
-    margin: 20px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 60%;
     cursor: pointer;
+    transition: 0.3s;
 }
+
+.upload-area:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
 button {
-    background: #d88c54;
+    background: #ff7f50;
     border: none;
     padding: 10px 20px;
     color: white;
     cursor: pointer;
+    margin: 10px;
+    font-size: 16px;
+    transition: 0.3s;
+    border-radius: 5px;
 }
+
 button:hover {
-    background: #e79e68;
+    background: #ff5733;
+}
+
+.customization {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px auto;
+    width: 50%;
 }
