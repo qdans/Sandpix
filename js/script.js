@@ -1,35 +1,46 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const uploadBox = document.getElementById("upload-area");
-    const fileInput = document.getElementById("file-input");
+const uploadInput = document.getElementById('upload-input');
+const uploadArea = document.getElementById('upload-area');
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+const downloadBtn = document.getElementById('download-btn');
 
-    uploadBox.addEventListener("click", function () {
-        fileInput.click();
-    });
+uploadArea.addEventListener('click', () => uploadInput.click());
+uploadInput.addEventListener('change', handleImageUpload);
 
-    fileInput.addEventListener("change", function (event) {
-        const file = event.target.files[0];
-        if (file) {
-            console.log("File uploaded:", file.name);
-            // TODO: Lakukan konversi ke pixel art di sini
-        }
-    });
+function handleImageUpload(event) {
+    const file = event.target.files[0];
+    if (!file) return;
 
-    uploadBox.addEventListener("dragover", function (event) {
-        event.preventDefault();
-        uploadBox.style.background = "rgba(255,255,255,0.2)";
-    });
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const img = new Image();
+        img.src = e.target.result;
+        img.onload = function() {
+            const size = 300;
+            canvas.width = size;
+            canvas.height = size;
+            ctx.drawImage(img, 0, 0, size, size);
+            applyPixelation();
+        };
+    };
+    reader.readAsDataURL(file);
+}
 
-    uploadBox.addEventListener("dragleave", function () {
-        uploadBox.style.background = "transparent";
-    });
+function applyPixelation() {
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const pixels = imageData.data;
+    for (let i = 0; i < pixels.length; i += 4) {
+        const avg = (pixels[i] + pixels[i + 1] + pixels[i + 2]) / 3;
+        pixels[i] = avg;
+        pixels[i + 1] = avg;
+        pixels[i + 2] = avg;
+    }
+    ctx.putImageData(imageData, 0, 0);
+}
 
-    uploadBox.addEventListener("drop", function (event) {
-        event.preventDefault();
-        uploadBox.style.background = "transparent";
-        const file = event.dataTransfer.files[0];
-        if (file) {
-            console.log("File dropped:", file.name);
-            fileInput.files = event.dataTransfer.files;
-        }
-    });
+downloadBtn.addEventListener('click', () => {
+    const link = document.createElement('a');
+    link.download = 'pixelated.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
 });
