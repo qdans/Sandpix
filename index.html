@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SandPix - Image to Pixel Art</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/images/logo.png" alt="SandPix Logo">
+            <h1>SandPix</h1>
+        </div>
+        <a href="https://github.com/qdans/SandPix" class="github-button">GITHUB</a>
+    </header>
+    <main>
+        <h2 class="fade-in">Image to pixel</h2>
+        <p class="fade-in">Convert your image to pixel art</p>
+        <div class="customization slide-in">
+            <h3>Customization</h3>
+            <div class="options">
+                <label>Style Mode:</label>
+                <input type="radio" name="style" value="enhance" checked> Enhance Edge
+                <input type="radio" name="style" value="isolate"> Isolate Pixel
+                <input type="radio" name="style" value="raw"> Raw Pixel
+                <br>
+                <label>Pixel Size:</label>
+                <input type="radio" name="pixel-size" value="xs"> Extra Small
+                <input type="radio" name="pixel-size" value="s"> Small
+                <input type="radio" name="pixel-size" value="m" checked> Medium
+                <input type="radio" name="pixel-size" value="l"> Large
+                <input type="radio" name="pixel-size" value="xl"> Extra Large
+                <br>
+                <label>Edge Density:</label>
+                <input type="radio" name="edge-density" value="small"> Small
+                <input type="radio" name="edge-density" value="medium"> Medium
+                <input type="radio" name="edge-density" value="large" checked> Large
+            </div>
+        </div>
+        <div class="upload-area bounce" id="drop-area">
+            <p>📤 Drop your image here</p>
+            <input type="file" id="file-input" accept="image/*" hidden>
+        </div>
+        <canvas id="canvas" style="display: none;"></canvas>
+        <button class="convert-button pulse" id="convert-button">Convert</button>
+        <button class="download-button pulse" id="download-button">⬇ DOWNLOAD <span>PNG</span></button>
+    </main>
+    <footer>
+        <h3 class="fade-in">FAQ</h3>
+        <p>What is "SandPix"?</p>
+        <p>What is "SandPix"?</p>
+        <p>What is "SandPix"?</p>
+    </footer>
+</body>
+</html>

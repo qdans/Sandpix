@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #3b1555, #c18d58);
+    color: white;
+    text-align: center;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.github-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    color: black;
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+.upload-area {
+    border: 2px dashed white;
+    padding: 50px;
+    margin: 20px;
+    cursor: pointer;
+}
+button {
+    background: #d88c54;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+}
+button:hover {
+    background: #e79e68;
+}
