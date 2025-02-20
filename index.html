@@ -3,60 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SandPix - Image to Pixel Art</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <title>SandPix - Image to Pixel</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header>
-        <div class="logo-container">
+    <div class="container">
+        <header>
             <img src="assets/images/logo.png" alt="SandPix Logo" class="logo">
             <h1>SandPix</h1>
-        </div>
-        <a href="https://github.com/qdans/SandPix" class="github-button">GITHUB</a>
-    </header>
-    <main>
-        <div class="hero-section">
-            <img src="assets/images/hero.png" alt="Hero Image" class="hero-image">
-            <div class="text-content">
-                <h2>Image to Pixel</h2>
-                <p>Convert your image to pixel art</p>
-            </div>
-        </div>
-        <div class="customization">
-            <h3>Customization</h3>
-            <div class="options">
+            <a href="https://github.com/qdans" class="github-button">GITHUB</a>
+        </header>
+        
+        <section class="main-content">
+            <h2>Image to pixel</h2>
+            <p>Convert your image to pixel art</p>
+            
+            <div class="customization">
+                <h3>Customization</h3>
                 <label>Style Mode:</label>
                 <input type="radio" name="style" value="enhance" checked> Enhance Edge
                 <input type="radio" name="style" value="isolate"> Isolate Pixel
                 <input type="radio" name="style" value="raw"> Raw Pixel
-                <br>
+                
                 <label>Pixel Size:</label>
-                <input type="radio" name="pixel-size" value="xs"> Extra Small
-                <input type="radio" name="pixel-size" value="s"> Small
-                <input type="radio" name="pixel-size" value="m" checked> Medium
-                <input type="radio" name="pixel-size" value="l"> Large
-                <input type="radio" name="pixel-size" value="xl"> Extra Large
-                <br>
+                <input type="radio" name="size" value="xs"> Extra Small
+                <input type="radio" name="size" value="s" checked> Small
+                <input type="radio" name="size" value="m"> Medium
+                <input type="radio" name="size" value="l"> Large
+                <input type="radio" name="size" value="xl"> Extra Large
+                
                 <label>Edge Density:</label>
-                <input type="radio" name="edge-density" value="small"> Small
-                <input type="radio" name="edge-density" value="medium"> Medium
-                <input type="radio" name="edge-density" value="large" checked> Large
+                <input type="radio" name="density" value="small"> Small
+                <input type="radio" name="density" value="medium" checked> Medium
+                <input type="radio" name="density" value="large"> Large
             </div>
-        </div>
-        <div class="upload-area" id="drop-area">
-            <p>📤 Drop your image here</p>
-            <input type="file" id="file-input" accept="image/*" hidden>
-        </div>
-        <canvas id="canvas" style="display: none;"></canvas>
-        <button class="convert-button" id="convert-button">Convert</button>
-        <button class="download-button" id="download-button">⬇ DOWNLOAD <span>PNG</span></button>
-    </main>
-    <footer>
-        <h3>FAQ</h3>
-        <p>What is "SandPix"?</p>
-        <p>How does it work?</p>
-        <p>Can I use this for free?</p>
-    </footer>
+            
+            <div class="upload-area">
+                <label for="file-upload" class="drop-area">
+                    <span>📤 Drop your image here</span>
+                </label>
+                <input type="file" id="file-upload" hidden>
+            </div>
+        </section>
+        
+        <section class="download-section">
+            <button id="download-btn">⬇ DOWNLOAD</button>
+            <select id="format-select">
+                <option value="png">PNG</option>
+                <option value="jpg">JPG</option>
+                <option value="webp">WEBP</option>
+            </select>
+        </section>
+        
+        <section class="faq">
+            <h3>FAQ</h3>
+            <p>What is "SandPix"?</p>
+            <p>What is "SandPix"?</p>
+            <p>What is "SandPix"?</p>
+        </section>
+    </div>
+    
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
