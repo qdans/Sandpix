@@ -1,42 +1,35 @@
-document.getElementById("uploadArea").addEventListener("click", function() {
-    document.getElementById("fileInput").click();
-});
+document.addEventListener("DOMContentLoaded", function () {
+    const uploadBox = document.getElementById("upload-area");
+    const fileInput = document.getElementById("file-input");
 
-document.getElementById("fileInput").addEventListener("change", function(event) {
-    const file = event.target.files[0];
-    if (file) {
-        processImage(file);
-    }
-});
+    uploadBox.addEventListener("click", function () {
+        fileInput.click();
+    });
 
-function processImage(file) {
-    const reader = new FileReader();
-    reader.onload = function(event) {
-        const img = new Image();
-        img.onload = function() {
-            const canvas = document.getElementById("canvas");
-            const ctx = canvas.getContext("2d");
+    fileInput.addEventListener("change", function (event) {
+        const file = event.target.files[0];
+        if (file) {
+            console.log("File uploaded:", file.name);
+            // TODO: Lakukan konversi ke pixel art di sini
+        }
+    });
 
-            // Set canvas size
-            canvas.width = img.width;
-            canvas.height = img.height;
+    uploadBox.addEventListener("dragover", function (event) {
+        event.preventDefault();
+        uploadBox.style.background = "rgba(255,255,255,0.2)";
+    });
 
-            // Apply pixelation effect (Basic implementation)
-            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    uploadBox.addEventListener("dragleave", function () {
+        uploadBox.style.background = "transparent";
+    });
 
-            // Implement further pixelation logic based on user selection (not included here)
-        };
-        img.src = event.target.result;
-    };
-    reader.readAsDataURL(file);
-}
-
-document.getElementById("downloadBtn").addEventListener("click", function() {
-    const canvas = document.getElementById("canvas");
-    const format = document.getElementById("formatSelect").value;
-    const link = document.createElement("a");
-
-    link.download = `sandpix-image.${format}`;
-    link.href = canvas.toDataURL(`image/${format}`);
-    link.click();
+    uploadBox.addEventListener("drop", function (event) {
+        event.preventDefault();
+        uploadBox.style.background = "transparent";
+        const file = event.dataTransfer.files[0];
+        if (file) {
+            console.log("File dropped:", file.name);
+            fileInput.files = event.dataTransfer.files;
+        }
+    });
 });
