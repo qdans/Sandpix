@@ -3,68 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandpix - Image to Pixel Art</title>
+    <title>SandPix - Image to Pixel Art</title>
     <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
 </head>
 <body>
     <header>
         <div class="logo-container">
             <img src="assets/images/logo.png" alt="Sandpix Logo" class="logo">
-            <h1 class="pixel-font">Sandpix</h1>
+            <h1>Sandpix</h1>
         </div>
-        <a href="https://github.com/qdans/sandpix" target="_blank">
-            <img src="assets/images/github-button.png" alt="GitHub" class="github-button">
+        <a href="https://github.com/qdans/sandpix" class="github-button">
+            <img src="assets/images/github-button.png" alt="GitHub">
         </a>
     </header>
-    
+
     <main>
-        <section class="conversion-area">
-            <h2 class="pixel-title">Image to pixel</h2>
+        <section class="intro">
+            <h2>Image to pixel</h2>
             <p>Convert your image to pixel art</p>
-            
-            <div class="customization">
-                <h3>Customization</h3>
-                <div class="options">
-                    <label>Style Mode:</label>
-                    <input type="radio" name="style" value="enhance" checked> Enhance Edge
-                    <input type="radio" name="style" value="isolate"> Isolate Pixel
-                    <input type="radio" name="style" value="raw"> Raw Pixel
-                </div>
-                <div class="options">
-                    <label>Pixel Size:</label>
-                    <input type="radio" name="pixel-size" value="extra-small"> Extra Small
-                    <input type="radio" name="pixel-size" value="small" checked> Small
-                    <input type="radio" name="pixel-size" value="medium"> Medium
-                    <input type="radio" name="pixel-size" value="large"> Large
-                    <input type="radio" name="pixel-size" value="extra-large"> Extra Large
-                </div>
-                <div class="options">
-                    <label>Edge Density:</label>
-                    <input type="radio" name="edge-density" value="small"> Small
-                    <input type="radio" name="edge-density" value="medium" checked> Medium
-                    <input type="radio" name="edge-density" value="large"> Large
-                </div>
+        </section>
+
+        <section class="customization">
+            <h3>Customization</h3>
+            <div class="options">
+                <label>Style Mode:</label>
+                <input type="radio" name="style" value="enhance" checked> Enhance Edge
+                <input type="radio" name="style" value="isolate"> Isolate Pixel
+                <input type="radio" name="style" value="raw"> Raw Pixel
+            </div>
+            <div class="options">
+                <label>Pixel Size:</label>
+                <input type="radio" name="pixel" value="xs"> Extra Small
+                <input type="radio" name="pixel" value="small" checked> Small
+                <input type="radio" name="pixel" value="medium"> Medium
+                <input type="radio" name="pixel" value="large"> Large
+                <input type="radio" name="pixel" value="xl"> Extra Large
+            </div>
+            <div class="options">
+                <label>Edge Density:</label>
+                <input type="radio" name="edge" value="small"> Small
+                <input type="radio" name="edge" value="medium" checked> Medium
+                <input type="radio" name="edge" value="large"> Large
             </div>
         </section>
 
-        <section class="drop-zone">
-            <div class="drop-container" id="drop-area">
+        <section class="dropzone-container">
+            <div id="dropzone" class="dropzone">
                 <p>⬆ Drop your image here</p>
-                <img id="preview" src="" alt="Preview Image" class="hidden">
-                <button id="reset-image" class="hidden">✖</button>
             </div>
+            <button id="reset-image" class="reset-btn">✖</button>
+        </section>
+
+        <section class="download-section">
+            <button id="download" class="download-btn">
+                <img src="assets/images/download-icon.png" alt="Download"> DOWNLOAD
+            </button>
+            <span class="format-label">PNG</span>
         </section>
     </main>
-    
-    <footer>
-        <button class="download-btn">⬇ DOWNLOAD</button>
-        <div class="download-options">
-            <button class="format-btn">PNG</button>
-            <button class="format-btn">JPG</button>
-            <button class="format-btn">WEBP</button>
-        </div>
-    </footer>
-    
-    <script src="js/script.js"></script>
 </body>
 </html>
