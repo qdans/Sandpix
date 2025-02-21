@@ -1,64 +1,54 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const dropArea = document.getElementById('drop-area');
-    const previewImage = document.getElementById('preview');
-    const resetButton = document.getElementById('reset-image');
-    const downloadButton = document.querySelector('.download-btn');
-    const formatButtons = document.querySelectorAll('.format-btn');
-    let selectedFormat = 'png';
+document.addEventListener("DOMContentLoaded", () => {
+    const dropZone = document.getElementById("drop-zone");
+    const fileInput = document.getElementById("file-input");
+    const downloadBtn = document.getElementById("download-btn");
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
     let uploadedImage = null;
 
-    // Handle file drop
-    dropArea.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        dropArea.style.borderColor = 'gold';
+    dropZone.addEventListener("click", () => fileInput.click());
+    
+    dropZone.addEventListener("dragover", (event) => {
+        event.preventDefault();
+        dropZone.classList.add("dragover");
+    });
+    
+    dropZone.addEventListener("dragleave", () => dropZone.classList.remove("dragover"));
+    
+    dropZone.addEventListener("drop", (event) => {
+        event.preventDefault();
+        dropZone.classList.remove("dragover");
+        const file = event.dataTransfer.files[0];
+        handleImageUpload(file);
     });
 
-    dropArea.addEventListener('dragleave', () => {
-        dropArea.style.borderColor = 'white';
+    fileInput.addEventListener("change", (event) => {
+        const file = event.target.files[0];
+        handleImageUpload(file);
     });
 
-    dropArea.addEventListener('drop', (e) => {
-        e.preventDefault();
-        dropArea.style.borderColor = 'white';
-        const file = e.dataTransfer.files[0];
-        if (file) {
+    function handleImageUpload(file) {
+        if (file && file.type.startsWith("image/")) {
             const reader = new FileReader();
-            reader.onload = (event) => {
-                uploadedImage = event.target.result;
-                previewImage.src = uploadedImage;
-                previewImage.classList.remove('hidden');
-                resetButton.classList.remove('hidden');
+            reader.onload = (e) => {
+                uploadedImage = new Image();
+                uploadedImage.src = e.target.result;
+                uploadedImage.onload = () => {
+                    canvas.width = uploadedImage.width;
+                    canvas.height = uploadedImage.height;
+                    ctx.drawImage(uploadedImage, 0, 0);
+                };
             };
             reader.readAsDataURL(file);
         }
-    });
+    }
 
-    // Reset image
-    resetButton.addEventListener('click', () => {
-        previewImage.src = '';
-        previewImage.classList.add('hidden');
-        resetButton.classList.add('hidden');
-        uploadedImage = null;
-    });
-
-    // Handle format selection
-    formatButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            selectedFormat = button.textContent.toLowerCase();
-        });
-    });
-
-    // Download image
-    downloadButton.addEventListener('click', () => {
+    downloadBtn.addEventListener("click", () => {
         if (!uploadedImage) return;
-        const link = document.createElement('a');
-        link.href = uploadedImage;
-        link.download = `sandpix_image.${selectedFormat}`;
+        const link = document.createElement("a");
+        link.href = canvas.toDataURL("image/png");
+        link.download = "pixel-art.png";
         link.click();
-    });
-
-    // Apply animation effects
-    document.querySelectorAll('.pixel-font, .pixel-title, .drop-container, .download-btn').forEach(el => {
-        el.classList.add('animated');
     });
 });
