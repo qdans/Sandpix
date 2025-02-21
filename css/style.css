@@ -1,17 +1,25 @@
+/* Sandpix - Styles */
+
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
-    font-family: 'Press Start 2P', cursive;
-    background: url('../assets/images/background.png') no-repeat center center/cover;
-    text-align: center;
-    color: white;
     margin: 0;
     padding: 0;
+    background: url('../assets/images/background.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+}
+
+.pixel-font {
+    font-family: 'Press Start 2P', cursive;
 }
 
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px;
 }
 
@@ -23,69 +31,76 @@ header {
 
 .logo {
     width: 50px;
+    height: auto;
 }
 
-.github-button img {
-    width: 50px;
+.github-button {
+    width: 40px;
+    height: auto;
 }
 
-h2, p {
-    margin: 5px 0;
+.conversion-area {
+    margin-top: 50px;
+}
+
+.pixel-title {
+    font-size: 24px;
 }
 
 .customization {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
     padding: 20px;
+    display: inline-block;
     border-radius: 10px;
-    width: fit-content;
-    margin: 20px auto;
 }
 
-.options {
-    margin: 10px 0;
+.options label {
+    font-weight: bold;
 }
 
 input[type="radio"] {
+    margin: 5px;
     accent-color: gold;
 }
 
 .drop-zone {
-    border: 2px dashed white;
-    width: 300px;
-    height: 200px;
-    margin: 20px auto;
+    margin-top: 30px;
+}
+
+.drop-container {
+    border: 2px dashed #fff;
+    padding: 50px;
+    display: inline-block;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.drop-zone img {
+.hidden {
+    display: none;
+}
+
+#preview {
     max-width: 100%;
-    max-height: 100%;
-    display: block;
+    height: auto;
+    margin-top: 10px;
 }
 
-.reset-btn {
+#reset-image {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 10px;
+    right: 10px;
     background: red;
     color: white;
     border: none;
-    font-size: 16px;
+    padding: 5px;
     cursor: pointer;
 }
 
-.download-section {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 20px;
+footer {
+    margin-top: 20px;
 }
 
-#download-btn {
-    background: #d98880;
+.download-btn {
+    background: #ff8c8c;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
@@ -93,34 +108,15 @@ input[type="radio"] {
     border-radius: 5px;
 }
 
-#format-select {
-    padding: 10px;
+.download-options {
+    margin-top: 10px;
 }
 
-/* Animations */
-.fade-in { animation: fadeIn 1s ease-in-out; }
-.bounce-in { animation: bounce 1s ease-in-out; }
-.slide-in { animation: slideIn 1s ease-in-out; }
-.pulse { animation: pulse 1s infinite; }
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes bounce {
-    0% { transform: scale(0.9); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
-@keyframes slideIn {
-    from { transform: translateY(-30px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+.format-btn {
+    background: gold;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
 }
