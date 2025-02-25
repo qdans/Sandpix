@@ -3,64 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SandPix - Image to Pixel Art</title>
+    <title>SandPix - Image to Pixel</title>
     <link rel="stylesheet" href="css/style.css">
-    <script defer src="js/script.js"></script>
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <img src="assets/images/logo.png" alt="Sandpix Logo" class="logo">
-            <h1>Sandpix</h1>
+            <img src="assets/images/icon.png" alt="SandPix Logo" class="logo">
+            <h1>SandPix</h1>
         </div>
-        <a href="https://github.com/qdans/sandpix" class="github-button">
-            <img src="assets/images/github-button.png" alt="GitHub">
-        </a>
+        <button class="connect-wallet">Connect Wallet</button>
     </header>
-
+    
     <main>
-        <section class="intro">
-            <h2>Image to pixel</h2>
-            <p>Convert your image to pixel art</p>
-        </section>
-
-        <section class="customization">
-            <h3>Customization</h3>
-            <div class="options">
+        <section class="converter">
+            <h2>Mainnets.exe</h2>
+            <div class="drop-zone" id="drop-zone">
+                <p>Drop your image here...</p>
+                <input type="file" id="upload" hidden>
+            </div>
+            <div class="customization">
+                <h2>Customization</h2>
                 <label>Style Mode:</label>
-                <input type="radio" name="style" value="enhance" checked> Enhance Edge
-                <input type="radio" name="style" value="isolate"> Isolate Pixel
-                <input type="radio" name="style" value="raw"> Raw Pixel
-            </div>
-            <div class="options">
+                <select id="style-mode">
+                    <option value="pixel">Pixel</option>
+                    <option value="dots">Dots</option>
+                </select>
                 <label>Pixel Size:</label>
-                <input type="radio" name="pixel" value="xs"> Extra Small
-                <input type="radio" name="pixel" value="small" checked> Small
-                <input type="radio" name="pixel" value="medium"> Medium
-                <input type="radio" name="pixel" value="large"> Large
-                <input type="radio" name="pixel" value="xl"> Extra Large
-            </div>
-            <div class="options">
+                <input type="range" id="pixel-size" min="1" max="10" value="5">
                 <label>Edge Density:</label>
-                <input type="radio" name="edge" value="small"> Small
-                <input type="radio" name="edge" value="medium" checked> Medium
-                <input type="radio" name="edge" value="large"> Large
+                <input type="range" id="edge-density" min="0" max="100" value="50">
             </div>
-        </section>
-
-        <section class="dropzone-container">
-            <div id="dropzone" class="dropzone">
-                <p>⬆ Drop your image here</p>
+            <div class="download-options">
+                <button class="download-btn" data-format="png">PNG</button>
+                <button class="download-btn" data-format="jpg">JPG</button>
+                <button class="download-btn" data-format="webp">WEBP</button>
             </div>
-            <button id="reset-image" class="reset-btn">✖</button>
-        </section>
-
-        <section class="download-section">
-            <button id="download" class="download-btn">
-                <img src="assets/images/download-icon.png" alt="Download"> DOWNLOAD
-            </button>
-            <span class="format-label">PNG</span>
         </section>
     </main>
+    
+    <script src="js/script.js"></script>
 </body>
 </html>
